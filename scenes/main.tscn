@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0g56yvqdk457"]
+
+[ext_resource type="Texture2D" uid="uid://ddlscjb30exce" path="res://assets/Red-Ball-PNG.png" id="1_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://ftyaj0f6q1id" path="res://assets/2dplatform.png" id="2_sugp2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jyhfs"]
+radius = 30.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tbgi4"]
+size = Vector2(14.818184, 15.591423)
+
+[node name="Main" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Ball" type="RigidBody2D" parent="."]
+position = Vector2(587, 318)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
+shape = SubResource("CircleShape2D_jyhfs")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ball"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_0wfyh")
+
+[node name="Platform" type="StaticBody2D" parent="."]
+position = Vector2(606, 564)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+position = Vector2(-21, 2)
+scale = Vector2(21.999998, 3.719995)
+shape = SubResource("RectangleShape2D_tbgi4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_sugp2")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(573, 323)
