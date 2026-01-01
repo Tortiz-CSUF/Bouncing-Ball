@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://d0g56yvqdk457"]
+[gd_scene load_steps=7 format=3 uid="uid://d0g56yvqdk457"]
 
 [ext_resource type="Texture2D" uid="uid://ddlscjb30exce" path="res://assets/Red-Ball-PNG.png" id="1_0wfyh"]
+[ext_resource type="Script" uid="uid://34u5ohmv6gkw" path="res://scenes/main.gd" id="1_jyhfs"]
 [ext_resource type="PhysicsMaterial" uid="uid://cruujv8kdvreg" path="res://assets/BallMaterial.tres" id="1_sugp2"]
 [ext_resource type="Texture2D" uid="uid://ftyaj0f6q1id" path="res://assets/2dplatform.png" id="2_sugp2"]
 
@@ -11,6 +12,7 @@ radius = 30.0
 size = Vector2(14.818184, 15.591423)
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_jyhfs")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -68,6 +70,8 @@ horizontal_alignment = 1
 
 [node name="SpinBox" type="SpinBox" parent="UI/ControlPanel/VBox/Mass"]
 layout_mode = 2
+max_value = 10.0
+step = 0.1
 alignment = 1
 
 [node name="Gravity" type="HBoxContainer" parent="UI/ControlPanel/VBox"]
@@ -80,6 +84,8 @@ horizontal_alignment = 1
 
 [node name="SpinBox" type="SpinBox" parent="UI/ControlPanel/VBox/Gravity"]
 layout_mode = 2
+max_value = 5.0
+step = 0.05
 alignment = 1
 
 [node name="Bounce" type="HBoxContainer" parent="UI/ControlPanel/VBox"]
@@ -92,4 +98,6 @@ horizontal_alignment = 1
 
 [node name="SpinBox" type="SpinBox" parent="UI/ControlPanel/VBox/Bounce"]
 layout_mode = 2
+max_value = 1.0
+step = 0.01
 alignment = 1
